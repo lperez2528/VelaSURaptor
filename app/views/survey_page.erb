@@ -1,0 +1,23 @@
+<h1>Survey: <%= @survey.name %></h1>
+
+<form action="/survey_page" method="POST">
+
+  <table>
+    <tbody>
+      <% @questions.each_with_index do |question, index| %>
+        <tr>
+          <td><%= index+1 %>. </td>
+          <td><%= question.description %></td>
+        </tr>
+          <% question.choices.each do |choice| %>
+            <tr> 
+              <td><input type="radio" value=<%= choice.text%>> </td>
+            </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</form>
+
+<input type="submit" value="Submit Survey">
+
