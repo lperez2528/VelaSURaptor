@@ -1,9 +1,79 @@
 .container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  width: 1080px;
 }
-th {
-  text-align: left;
+
+.col-50{
+  display:inline-block;
+  position:relative;
+  width:49%;
 }
+
+ 
+.top-nav{
+  height:70px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(106,183,129,1)), color-stop(100%,rgba(0,63,24,1)));
+  border-radius: 5px;
+}
+
+.logo img{
+  width:110px;
+  htight:auto;
+  position: relative;
+}
+
+.top-nav .login {
+  position:relative;
+  top:40px;
+  right:10px;
+  float:right;
+}
+
+
+
+.top-nav .links ul {
+  margin:0;
+  margin-left: 60px;
+  color:#EAEAEA;
+  float:left;
+  position:relative;
+  bottom:30px;
+}
+
+.top-nav .links li {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.top-nav .links a, .top-nav .name, .top-nav .login a{
+  text-decoration: none;
+  color:#EAEAEA;
+  font-family: Arial;
+  font-size: 1.1em;
+  font-weight:bold;
+}
+
+
+.top-nav .login a{
+  font-weight: normal;
+  margin-left: 15px;
+}
+.top-nav .links li {
+  display:inline-block;
+}
+
+.signup {
+  border-right:2px solid gray;
+}
+
+.signup, .login {
+  margin-top: 5px;
+}
+
+label {
+  float: left;
+  text-align: right;
+  margin-right:2px;
+  width: 100px;
+}
+
