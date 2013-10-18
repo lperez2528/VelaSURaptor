@@ -200,3 +200,7 @@ label {
     clear: both;
 }
 
+#login-errors{
+  color:red;
+}
+

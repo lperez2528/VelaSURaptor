@@ -9,15 +9,17 @@ end
 
 post '/login' do
   user = User.find_by_email(params[:email])
-  auth_user = user.authenticate(params[:password])
+  auth_user = user.authenticate(params[:password]) if user
 
   if auth_user
     session[:user_id] = auth_user.id
     redirect '/'
   elsif user
     @error = "Wrong password"
+    erb :login
   else
     @error = "User #{params[:email]} was not found"
+    erb :login
   end
 
 end
