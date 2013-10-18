@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Edit/Create</h1>
+  	<form action='/edit_profile' method="post">
+  		First Name<br><input type="text" name="first_name" value="<%=@user.first_name%>">
+  		<br><br>
+
+  		Last Name<br><input type="text" name="last_name" value="<%=@user.last_name%>">
+  		<br><br>
+
+  		Email<br><input type="email" name="email" value="<%=@user.email%>">
+  		<br><br>
+
+  		BirthDate<br><input type="date" name="birthdate" value="<%=@user.birthdate%>">
+  		<br><br>
+
+  		Home City<br><input type="text" name="home_city" value="<%=@user.home_city%>">
+  		<br><br>
+
+			Zip Code<br><input type="text" name="zipcode" value="<%=@user.zipcode%>">
+			<br><br>
+
+			Gravatar<br><input type="url" name="gravatar" value="<%=@user.gravatar%>">
+			<br><br>
+			
+			<input type="submit" name="submit">
+		</form>
+</div>
+  	
