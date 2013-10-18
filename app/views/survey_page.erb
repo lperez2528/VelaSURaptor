@@ -1,4 +1,4 @@
-<h1>Survey: <%= @survey.name %></h1>
+<h1>Survey: <%= @survey.title %></h1>
 
 <form action="/survey_page" method="POST">
 
@@ -12,6 +12,7 @@
           <% question.choices.each do |choice| %>
             <tr> 
               <td><input type="radio" value=<%= choice.text%>> </td>
+              <td><%= choice.text%> </td>
             </tr>
           <% end %>
       <% end %>
