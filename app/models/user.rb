@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  attr_protected :password_digest
   
   has_many :created_surveys, class_name:"Survey", foreign_key: :creator_id  
   has_many :submissions, foreign_key: :taker_id

@@ -1,3 +1,32 @@
+<% if authenticated? %>
+
+<div class="col-66">
+  <h1>Welcome <%= current_user.name %></h1>
+  <a href="/edit_profile">Edit User Profile</a>
+  <br>
+  <h3>My Surveys</h3>
+  <% current_user.created_surveys.each do |survey| %>
+    <a href=""><%= survey.description %></a><br><br>
+  <%end%>
+  </div>
+
+  <div class="col-33">
+
+    <% if current_user.gravatar %>
+      <img src=<%= current_user.gravatar %> alt="">
+    <% end %>
+    <ul>
+      <% current_user.attributes.each do |attr,value| %>
+        <% if value %>
+          <li>
+            <%= "#{attr.humanize}: #{value}" %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>   
+  </div>
+<% else %>
+
 <div class="col-66">
   <div class="welcome">
     <h1>Welcome to VelaSURaptor</h1>
@@ -21,3 +50,5 @@
     <img class="sidebar-raptor" src="velociraptor_2.png" >
   </div>
 </div>
+
+<% end %>

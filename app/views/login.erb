@@ -1,5 +1,6 @@
-<div class="col-50">
-  <form  class="signup" action="/signup" method="POST">
+<div class="col-50 signup-container">
+  <h3>Sign up</h3>
+  <form  class="signup well" action="/signup" method="POST">
     
     <label for="first_name">First Name</label>
     <input id="first_name" type="text" name="user[first_name]">
@@ -17,13 +18,18 @@
     <input id="password" type="password" name="user[password]">
     <br>
 
-    <input type="submit" value="Sign Up">
+    <input class="btn"type="submit" value="Sign Up">
 
   </form>
-</div>
-<div class="col-50">
 
-  <form  class="login" action="/login" method="POST">
+  <div id="errors">
+      
+  </div>
+</div>
+<div class="col-50 login-container">
+  <h3>Log in</h3>  
+
+  <form  class="login well" action="/login" method="POST">
   
     <label for="email">Email</label>
     <input  type="email" name="email">
@@ -33,8 +39,12 @@
     <input id="password" type="password" name="password">
     <br>
 
-    <input type="submit" value="Log In">
+    <input class="btn"type="submit" value="Log In">
     
   </form>
+
+  <div id="errors">
+      
+  </div>
   
 </div>

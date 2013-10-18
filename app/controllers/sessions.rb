@@ -13,7 +13,7 @@ post '/login' do
 
   if auth_user
     session[:user_id] = auth_user.id
-    redirect '/logged_homepage'
+    redirect '/'
   elsif user
     @error = "Wrong password"
   else
@@ -30,24 +30,17 @@ end
 
 
 get '/edit_profile' do
-  @user = current_user
   erb :edit_profile
 end
 
 post '/edit_profile' do
-  @user = current_user
-  @user.update_attributes(first_name: params[:first_name],
+  current_user.update_attributes(first_name: params[:first_name],
                           last_name: params[:last_name],
                           email: params[:email],
                           birthdate: params[:birthdate],
                           home_city: params[:home_city],
                           zipcode: params[:zipcode],
                           gravatar: params[:gravatar])
-  redirect to('/logged_homepage')
+  redirect to('/')
 end
 
-get '/logged_homepage' do
-  @user = current_user
-  @surveys = Survey.all
-  erb :logged_homepage
-end

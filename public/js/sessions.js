@@ -1,7 +1,51 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+$(document).ready(function(){
+  $(document).on("submit",".signup", function(event){
+    var email = $(".signup").find("#email").val();
+    var password = $(".signup").find("#password").val();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+    var errors = checkEmailErrors(email).concat(checkPasswordErrors(password));
+    
+    if (errors.length === 0){
+      return true
+    }else{
+      event.preventDefault();
+      var displayErrors = "<ul style='color:red'>"
+      for(i in errors){
+        displayErrors = displayErrors + "<li>" + errors[i] + "</li>"
+      }
+      displayErrors = displayErrors + "</ul>"
+      
+      $("#errors").html(displayErrors);
+    }
+  })
+ 
+})
+ 
+function checkEmailErrors(email){
+  var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+  var emailErrors = []
+ 
+  if (!email.match(emailRegex)){
+    emailErrors.push("Invalid email")
+  }
+ 
+  return emailErrors
+ 
+}
+ 
+function checkPasswordErrors(password){
+  var passwordErrors = []
+  if(password.length < 8){
+    passwordErrors.push("Password must be longer than 8 characters")
+  }
+ 
+  if(!password.match(/[a-z]+/)){
+    passwordErrors.push("Password must contain at least one lowercase character")
+  }
+ 
+   if(!password.match(/[A-Z]+/)){
+    passwordErrors.push("Password must contain at least one uppercase character")
+  }
+ 
+  return passwordErrors
+}

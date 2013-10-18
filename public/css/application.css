@@ -12,20 +12,24 @@ body {
 }
 
 .col-50{
+  padding:20px;
   display:inline-block;
-  width:49%;
+  width:45%;
+  float: left;
 }
 
 .col-33{
   display:inline-block;
   width:29%;
   padding:20px;
+  float: left;
 }
 
 .col-66{
   display:inline-block;
   width:62%;
   padding:20px;
+  float: left;
 }
 
 .well {
@@ -55,7 +59,7 @@ body {
 
 .top-nav .login {
   position:relative;
-  top:40px;
+  top:44px;
   right:10px;
   float:right;
 }
@@ -68,7 +72,7 @@ body {
   color:#EAEAEA;
   float:left;
   position:relative;
-  bottom:30px;
+  bottom:33px;
 }
 
 .top-nav .links li {
@@ -98,16 +102,30 @@ body {
 }
 
 .sidebar-raptor{
+  width:100%;
+  height:auto;
   border-radius: 4px;
   box-shadow: 1px 1px 25px rgba(0, 27, 3, 0.87);
 }
 
-.signup {
-  border-right:2px solid gray;
+.signup-container {
+  height:600px;
+  text-align: center;
+  border-right:2px solid gray;  
 }
 
-.signup, .login {
-  margin-top: 5px;
+.login-container{
+  height:600px;
+/*   position: relative;
+  bottom: 68px; */
+  text-align: center
+}
+
+
+
+
+input, label{
+  margin-top: 10px;
 }
 
 label {
@@ -159,6 +177,18 @@ label {
   position:relative;
   top:1px;
 }
+
+
+.container:before,
+.container:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.container:after {
+    clear: both;
+}
+
 
 .well:before,
 .well:after {
