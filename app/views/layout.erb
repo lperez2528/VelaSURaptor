@@ -20,6 +20,25 @@
   <title></title>
 </head>
 <body>
+  <div class="top-nav">
+    <header class="top">
+      <span>VeloSURraptor</span>
+      <% if authenticated? %>
+        <span><%= current_user.name %></span>
+        <button><a href="/logout">Log Out</a></button>
+      <% else %>
+        <button class="sign-in"><a href="/login">Log In</a></button>
+      <% end %>
+    </header>
+    <nav class="links">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Take Survey</a></li>
+        <li><a href="#">Create Survey</a></li>
+        <li><a href="#">Examples</a></li>
+      </ul>
+    </nav>
+  </div>
   <%= yield %>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<div class="col-50">
+  <form  class="signup" action="/signup" method="POST">
+    
+    <label for="first_name">First Name</label>
+    <input id="first_name" type="text" name="user[first_name]">
+    <br>
+    
+    <label for="last_name">Last Name</label>
+    <input id="last_name" type="text" name="user[last_name]">
+    <br>
+
+    <label for="email">Email</label>
+    <input id="email" type="text" name="user[email]">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" type="password" name="user[password]">
+    <br>
+
+    <input type="submit" value="Sign Up">
+
+  </form>
+</div>
+<hr>
+<div class="col-50">
+
+  <form  class="login" action="/login" method="POST">
+  
+    <label for="email">Email</label>
+    <input id="email" type="text" name="email">
+    <br> 
+
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password">
+    <br>
+
+    <input type="submit" value="Log In">
+    
+  </form>
+  
+</div>
