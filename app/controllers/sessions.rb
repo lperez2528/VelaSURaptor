@@ -13,7 +13,7 @@ post '/login' do
 
   if auth_user
     session[:user_id] = auth_user.id
-    redirect '/'
+    redirect '/logged_homepage'
   elsif user
     @error = "Wrong password"
   else
@@ -27,6 +27,7 @@ post '/signup' do
   session[:user_id] = user.id
   redirect '/'
 end
+
 
 get '/edit_profile' do
   @user = current_user

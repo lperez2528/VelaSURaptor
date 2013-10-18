@@ -1,12 +1,43 @@
+body {
+  font-weight: 200;
+  line-height: 1.4;
+  font-family: helvetica;
+  color:#444;
+}
+
 .container {
-  margin: 20px auto;
+  margin: 0 auto;
   width: 1080px;
+  background-color:#F0F6F0;
 }
 
 .col-50{
   display:inline-block;
-  position:relative;
   width:49%;
+}
+
+.col-33{
+  display:inline-block;
+  width:29%;
+  padding:20px;
+}
+
+.col-66{
+  display:inline-block;
+  width:62%;
+  padding:20px;
+}
+
+.well {
+  margin-top:50px;
+  text-align:center;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #DBE2DB;
+  border: 1px solid darken(#DBE2DB 7%);
+  border-radius: 3px;
+  box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.41);
 }
 
  
@@ -47,7 +78,7 @@
 
 .top-nav .links a, .top-nav .name, .top-nav .login a{
   text-decoration: none;
-  color:#EAEAEA;
+  color:#eaeaea;
   font-family: Arial;
   font-size: 1.1em;
   font-weight:bold;
@@ -60,6 +91,15 @@
 }
 .top-nav .links li {
   display:inline-block;
+}
+
+.welcome p {
+  font-size: 1.1em;
+}
+
+.sidebar-raptor{
+  border-radius: 4px;
+  box-shadow: 1px 1px 25px rgba(0, 27, 3, 0.87);
 }
 
 .signup {
@@ -75,5 +115,58 @@ label {
   text-align: right;
   margin-right:2px;
   width: 100px;
+}
+
+.buttons{
+  float:left;
+  text-align:center;
+}
+
+.buttons p {
+  font-weight: bold;
+  color:#192B19;
+}
+
+.signup-text{
+  position:relative;
+  top:16px;
+  right:20px;
+  font-size: 26px;
+  color:#192B19;
+}
+
+.btn {
+  box-shadow:inset 0px 0px 16px -5px #333b2d;
+  background-color:#353d1f;
+  border-radius:10px;
+  text-indent:1.31px;
+  border:1px solid #2a2e24;
+  display:inline-block;
+  font-family:Arial;
+  font-size:15px;
+  color:#EAEAEA;
+  height:35px;
+  line-height:30px;
+  width:100px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 12px #53574c;
+}
+.btn:hover {
+  background-color:#3d4726;
+}
+.btn:active {
+  position:relative;
+  top:1px;
+}
+
+.well:before,
+.well:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.well:after {
+    clear: both;
 }
 
