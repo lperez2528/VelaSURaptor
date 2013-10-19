@@ -47,8 +47,13 @@ body {
 .small{
   margin: 15px;
   float: left;
-  width: 150px;
-  height:50px;
+  width: 200px;
+  height:75px;
+}
+
+.well.small.list {
+  width:250px;
+  height:75px;
 }
 
 .small:hover{
@@ -113,10 +118,19 @@ body {
   margin-left: 40px;
 }
 
+.survey-of-day h1{
+  border-bottom: 1px solid gray;
+}
+
+.small-text{
+  font-size: 0.85em;
+}
+
 .small a{
   text-decoration: none;
   color:#777;
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 .top-nav .links a, .top-nav .name, .top-nav .login a{

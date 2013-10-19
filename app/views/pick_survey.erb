@@ -1,18 +1,20 @@
 <div class="col-66 survey-list">
   <h1>Pick a survey</h1>
   <%@surveys.each do |survey|%>
-    <div class="well small">
-      <a href="/survey/<%=survey.id%>"><%= survey.title %></a><br><br>
+    <div class="well small list">
+      <a href="/survey/<%=survey.id%>"><%= survey.title %></a>
+      <p>by <%= survey.creator.name %></p>
     </div>
   <% end %>  
 </div>
 
 <div class="col-33">
-  <div class="well">
+  <div class="well survey-of-day">
     <h1>Survey of the day</h1>
      <% survey_of_day = @surveys.sample %>
      <h3><%= survey_of_day.title %> </h3>
      <p><%= survey_of_day.description %></p>
+     <p class = "small-text">by <%= survey_of_day.creator.name %></p>
      <form action="/survey/<%= survey_of_day.id %>">
        <input type="submit" class="btn big" value="Take this survey">
      </form>
