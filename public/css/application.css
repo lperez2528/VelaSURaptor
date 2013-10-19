@@ -53,6 +53,10 @@ body {
   margin: 50px auto;
 }
 
+#sortable{
+  list-style-type: none;
+}
+
 
  
 .top-nav{

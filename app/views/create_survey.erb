@@ -16,15 +16,19 @@
 
 <div class="col-50">
 <form id="createsurvey" action="/create_survey" method= "post">
-  <div class="question_and_choices well">
-    
-    <p><label for "create_question">Question:</label></p>
-    <p><input type= "text" name="question[]" id="question"></p>
- 
-    <p><label for "create_choice" id="create_choice">Choice:</label></p>
-    <p><input type= "text" name="question[]choice[]" class="choice"></p>
- 
-  </div>
+  <ul id="sortable">
+    <li class="ui-state-default">
+      <div class="question_and_choices well">
+      
+        <p><label for "create_question">Question:</label></p>
+        <p><input type= "text" name="question[]" id="question"></p>
+   
+        <p><label for "create_choice" id="create_choice">Choice:</label></p>
+        <p><input type= "text" name="question[]choice[]" class="choice"></p>
+   
+      </div>
+    </li>
+  </ul>
   
 </form>
 </div>

@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $('.question_button').on('click', function(){
-      var input = $("<div class='question_and_choices well'><p><label for 'create_question'>Question:</label></p><p><input type= 'text' name='question[]' id='question'></p><p><label for 'create_choice'>Choice:</label></p> <p><input type= 'text' name='question[]choice[]' class='choice'></p></div>")
+      var input = $("<li class='ui-state-default'><div class='question_and_choices well'><p><label for 'create_question'>Question:</label></p><p><input type= 'text' name='question[]' id='question'></p><p><label for 'create_choice'>Choice:</label></p> <p><input type= 'text' name='question[]choice[]' class='choice'></p></div></li>")
  
-      $('.question_and_choices').last().after(input)
+      $('#sortable').append(input)
     });
 
     $('.choice_button').on('click', function(){
@@ -11,4 +11,7 @@ $(document).ready(function(){
       $('.choice').last().after(input) 
     });
 
-  })
+    $("#sortable").sortable()
+    $("#sortable").disableSelection();
+
+})
