@@ -1,11 +1,14 @@
 <% if authenticated? %>
 
 <div class="col-66">
-  <br>
   <h3>My Surveys</h3>
-  <% current_user.created_surveys.each do |survey| %>
-    <a href=""><%= survey.description %></a><br><br>
-  <%end%>
+  <div class="created-surveys well">
+    <ul class="created-survey-list">
+      <% current_user.created_surveys.each do |survey| %>
+        <li><a href=""><%= survey.title %></a></li>
+      <%end%>
+    </ul>
+  </div>
 </div>
 
 <div class="col-33">

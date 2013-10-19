@@ -188,6 +188,19 @@ label{
   margin-bottom: 15px;
 }
 
+.created-surveys{
+  width:50%;
+}
+
+.created-survey-list{
+  padding-left: 0px;
+}
+
+
+.created-survey-list li{
+  list-style-type: none;
+}
+
 
 .btn {
   box-shadow:inset 0px 0px 16px -5px #333b2d;

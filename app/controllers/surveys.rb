@@ -10,10 +10,11 @@ end
  
 post '/create_survey' do
   survey = Survey.create(title: params[:create_title])
-  questions = Hash[*params[:mc_question].flatten]
+  questions = Hash[*params[:question].flatten]
+  current_user.created_surveys << survey
  
   questions.each do |k,v|
-    choice_array = v['mc_answer']
+    choice_array = v['choice']
  
     question = Question.create(description: k)
     survey.questions << question
