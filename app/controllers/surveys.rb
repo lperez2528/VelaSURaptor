@@ -9,7 +9,7 @@ end
  
  
 post '/create_survey' do
-  survey = Survey.create(title: params[:create_title])
+  survey = Survey.create(title: params[:create_title], description: params[:description])
   questions = Hash[*params[:question].flatten]
   current_user.created_surveys << survey
  
