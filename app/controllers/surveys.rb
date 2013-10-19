@@ -23,7 +23,10 @@ post '/create_survey' do
       question.choices << Choice.create(text: choice) 
     end
   end
- 
   redirect('/')
- 
+ end
+
+get '/pick_survey' do 
+  @surveys = Survey.all
+  erb :pick_survey
 end
