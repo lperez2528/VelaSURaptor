@@ -39,9 +39,28 @@ body {
   padding: 19px;
   margin-bottom: 20px;
   background-color: #DBE2DB;
-  border: 1px solid darken(#DBE2DB 7%);
+  border: 1px solid #C5CBC5;
   border-radius: 3px;
   box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.41);
+}
+
+.small{
+  margin: 15px;
+  float: left;
+  width: 150px;
+  height:50px;
+}
+
+.small:hover{
+  background-color:#C5CBC5;
+}
+
+.survey-list{
+  text-align: center;
+}
+
+.survey-list h1{
+  text-shadow: 0px 0px 5px rgba(150, 150, 150, 1);
 }
 
 .well.fixed{
@@ -92,6 +111,12 @@ body {
 .top-nav .links li {
   margin-right: 40px;
   margin-left: 40px;
+}
+
+.small a{
+  text-decoration: none;
+  color:#777;
+  font-weight: bold;
 }
 
 .top-nav .links a, .top-nav .name, .top-nav .login a{
@@ -202,18 +227,6 @@ label{
   margin-bottom: 15px;
 }
 
-.created-surveys{
-  width:50%;
-}
-
-.created-survey-list{
-  padding-left: 0px;
-}
-
-
-.created-survey-list li{
-  list-style-type: none;
-}
 
 
 .btn {

@@ -1,5 +1,20 @@
-<h2>Welcome <%=current_user.name%></h2>
-<h3>Pick a Survey you would like to take:</h3>
-<%@surveys.each do |survey|%>
-<a href="/survey/<%=survey.id%>"><%= survey.title %></a><br><br>
-<% end %>
+<div class="col-66 survey-list">
+  <h1>Pick a survey</h1>
+  <%@surveys.each do |survey|%>
+    <div class="well small">
+      <a href="/survey/<%=survey.id%>"><%= survey.title %></a><br><br>
+    </div>
+  <% end %>  
+</div>
+
+<div class="col-33">
+  <div class="well">
+    <h1>Survey of the day</h1>
+     <% survey_of_day = @surveys.sample %>
+     <h3><%= survey_of_day.title %> </h3>
+     <p><%= survey_of_day.description %></p>
+     <form action="/survey/<%= survey_of_day.id %>">
+       <input type="submit" class="btn big" value="Take this survey">
+     </form>
+  </div>
+</div>
