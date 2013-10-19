@@ -1,21 +1,20 @@
-get '/survey_page' do
-  @survey = Survey.find(1)
+get '/survey_page/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
   @questions = @survey.questions
   erb :survey_page
 end
 
 
-post '/survey_page' do
-  @user = User.find(1)
-  @survey = Survey.find(1)
-  submissions = Submission.find(1)
+post '/survey_page/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
   @questions = @survey.questions
-  # @choices = @questions.choices
-  @user.taken_surveys << @survey
-  
-  p params
+  @submission = Submission.create(taker_id: @current_user, survey_id: @survey.id)
+  choice_hash = params[:current_choices]  
 
-  # @user.submissions.find(1).responses << Response.create(submission_id: submission, choice_id: )
-  
+  choice_hash.each do |question, choice|
+    Response.create(submission_id: @submission.id, choice_id: choice)
+  end
+
+  @current_user.taken_surveys << @survey
   redirect '/'
 end
