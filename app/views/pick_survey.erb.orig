@@ -1,13 +1,12 @@
 <div class="col-66 survey-list">
   <h1>Pick a survey</h1>
   <%@surveys.each do |survey|%>
-<<<<<<< HEAD
-    <div class="well small">
-      <a href="/survey_page/<%=survey.id%>"><%= survey.title %></a><br><br>
-=======
     <div class="well small list">
       <a href="/survey/<%=survey.id%>"><%= survey.title %></a>
       <p>by <%= survey.creator.name %></p>
+<<<<<<< HEAD
+=======
+
 >>>>>>> seeds
     </div>
   <% end %>  
