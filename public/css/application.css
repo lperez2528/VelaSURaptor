@@ -116,8 +116,6 @@ body {
 
 .login-container{
   height:600px;
-/*   position: relative;
-  bottom: 68px; */
   text-align: center
 }
 
@@ -173,6 +171,10 @@ label{
   text-align: center;
 }
 
+.gravatar img{
+  border-radius: 2px;
+  box-shadow: 1px 1px 25px rgba(0, 27, 3, 0.87);
+}
 
 .attr {
   float: left;

@@ -1,0 +1,54 @@
+<div class= "col-100">
+  <h1>Create A New Survey</h1> 
+ 
+ 
+<form action= "/create_survey" method= "post">
+  <p><label for "create_title">Survey Title:</label></p>
+  <p><input type="text" name="create_title"></p>
+  <p><label for "description">Description:</p>
+  <p><input type="text" name="description"></p>
+  
+  <div class="question_and_choices">
+    
+    <p><label for "create_question">Question:</label></p>
+    <p><input type= "text" name="mc_question[]" id="question"></p>
+ 
+    <p><label for "create_choice" id="create_choice">Choice:</label></p>
+    <p><input type= "text" name="mc_question[]mc_answer[]" class="choice"></p>
+ 
+  </div>
+  
+  <p><input type="submit" value="Submit New Survey"></p>
+</form>
+ 
+ 
+ 
+ 
+  <script type="text/javascript">$(document).ready(function(){
+    $('.question_button').on('click', function(){
+ 
+      var input = $("<div class='question_and_choices'><p><label for 'create_question'>Question:</label></p><p><input type= 'text' name='mc_question[]' id='question'></p><p><label for 'create_choice'>Choice:</label></p> <p><input type= 'text' name='mc_question[]mc_answer[]' class='choice'></p></div>")
+ 
+      var div = $('.question_and_choices')
+ 
+      $('.question_and_choices').last().after(input)
+ 
+    });
+  })
+  </script>
+  <button type="button" class="question_button" >Add Another Question</button>
+ 
+  <script type="text/javascript">$(document).ready(function(){
+    $('.choice_button').on('click', function(){
+      var input = $('<p><input type= "text" name="mc_question[]mc_answer[]" class="choice"></p>')
+      var form = $('.choice')
+ 
+      $('.choice').last().after(input)
+ 
+    });
+  })
+  </script>
+  <button type="button" class="choice_button" >Add Another Choice</button>
+ 
+ 
+</div>
