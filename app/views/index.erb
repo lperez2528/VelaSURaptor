@@ -1,30 +1,36 @@
 <% if authenticated? %>
 
 <div class="col-66">
-  <h1>Welcome <%= current_user.name %></h1>
-  <a href="/edit_profile">Edit User Profile</a>
   <br>
   <h3>My Surveys</h3>
   <% current_user.created_surveys.each do |survey| %>
     <a href=""><%= survey.description %></a><br><br>
   <%end%>
-  </div>
+</div>
 
-  <div class="col-33">
-
+<div class="col-33">
+ <div class="well user-info">
     <% if current_user.gravatar %>
-      <img src=<%= current_user.gravatar %> alt="">
+     <div class="gravatar">
+        <img src=<%= current_user.gravatar %> alt="">
+     </div>
     <% end %>
+    
     <ul>
-      <% current_user.attributes.each do |attr,value| %>
-        <% if value %>
-          <li>
-            <%= "#{attr.humanize}: #{value}" %>
-          </li>
-        <% end %>
+      <% current_user.available_attributes.each do |attr, value| %>
+        <li>
+          <span class="attr"><%= attr.humanize %>: </span>
+          <b><%= value %></b>
+        </li>
       <% end %>
-    </ul>   
-  </div>
+    </ul>
+    
+      <form action="/edit_profile">
+        <input type="submit" class="edit btn" value="Edit profile"/>
+      </form>   
+    </div>
+
+</div>
 <% else %>
 
 <div class="col-66">
