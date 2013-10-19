@@ -1,0 +1,24 @@
+<h1>Survey: <%= @survey.title %></h1>
+
+<form action="/survey_page" method="POST">
+
+  <table>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.description %></td>
+        </tr>
+          <% question.choices.each do |choice| %>
+            <tr> 
+              <td><input id="choice" name="<%= question.id %>" type="radio" value="choice"> </td>
+              <td><%= choice.text%> </td>
+            </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <input type="submit" value="Submit Survey">
+</form>
+
+
