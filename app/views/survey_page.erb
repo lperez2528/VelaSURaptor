@@ -4,21 +4,21 @@
 
   <table>
     <tbody>
-      <% @questions.each_with_index do |question, index| %>
+      <% @questions.each do |question| %>
         <tr>
-          <td><%= index+1 %>. </td>
           <td><%= question.description %></td>
         </tr>
           <% question.choices.each do |choice| %>
             <tr> 
-              <td><input type="radio" value=<%= choice.text%>> </td>
+              <td><input id="choice" name="<%= question.id %>" type="radio" value="choice"> </td>
               <td><%= choice.text%> </td>
             </tr>
           <% end %>
       <% end %>
     </tbody>
   </table>
+
+  <input type="submit" value="Submit Survey">
 </form>
 
-<input type="submit" value="Submit Survey">
 
