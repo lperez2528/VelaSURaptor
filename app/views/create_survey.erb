@@ -1,13 +1,21 @@
-<div class="col-66">
+<div class="col-50">
+  <div class="well fixed">
 
-<h1>Create A New Survey</h1> 
-  
+    <h1>Create A New Survey</h1> 
+    <p><label  for="create_title">Survey Title:</label></p>
+    <p><input form="createsurvey" type="text" name="create_title"></p>
+    
+    <p><label for="description">Description:</label></p>
+    <p><input form="createsurvey" type="text" name="description"></p>
+    
+    <button class="question_button btn big" >Add Another Question</button>
+    <button class="choice_button btn big">Add Another Choice</button>
+    <button class="btn big" type="submit"  form="createsurvey">Create Survey  </button> 
+  </div>
+</div>
+
+<div class="col-50">
 <form id="createsurvey" action="/create_survey" method= "post">
-  <p><label for "create_title">Survey Title:</label></p>
-  <p><input type="text" name="create_title"></p>
-  <p><label for "description">Description:</p>
-  <p><input type="text" name="description"></p>
-  <div class="col-66">
   <div class="question_and_choices well">
     
     <p><label for "create_question">Question:</label></p>
@@ -18,8 +26,5 @@
  
   </div>
   
-  <p><input type="submit" value="Submit New Survey"></p>
 </form>
- <button type="button" class="question_button" >Add Another Question</button>
- <button type="button" class="choice_button" >Add Another Choice</button>
 </div>

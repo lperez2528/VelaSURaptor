@@ -44,6 +44,16 @@ body {
   box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.41);
 }
 
+.well.fixed{
+  /*position:fixed;*/
+}
+
+.edit{
+  width:50%;
+  margin: 50px auto;
+}
+
+
  
 .top-nav{
   height:70px;
@@ -225,6 +235,11 @@ label{
 .btn:active {
   position:relative;
   top:1px;
+}
+
+.btn.big{
+  margin-top: 15px;
+  width:200px;
 }
 
 
