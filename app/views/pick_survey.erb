@@ -1,5 +1,5 @@
 <h2>Welcome <%=current_user.name%></h2>
 <h3>Pick a Survey you would like to take:</h3>
 <%@surveys.each do |survey|%>
-<a href="/survey/<%=survey.id%>"><%= survey.title %></a><br><br>
+<a href="/survey_page/<%=survey.id%>"><%= survey.title %></a><br><br>
 <% end %>
