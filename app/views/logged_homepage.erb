@@ -4,6 +4,6 @@
 	<br>
 	<h3>My Surveys</h3>
 	<% @user.created_surveys.each do |survey| %>
-	<a href=""><%= survey.description %></a><br><br>
+	<a href="/results/survey/<%= survey.id %>"><%= survey.description %></a><br><br>
 	<%end%>
 </div>

@@ -26,6 +26,7 @@ post '/create_survey' do
   redirect('/')
  end
 
+#renders pick_survey, comes from navbar
 get '/pick_survey' do 
   @surveys = Survey.all
   erb :pick_survey

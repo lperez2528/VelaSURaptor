@@ -2,7 +2,7 @@
   <h1>Pick a survey</h1>
   <%@surveys.each do |survey|%>
     <div class="well small list">
-      <a href="/survey/<%=survey.id%>"><%= survey.title %></a>
+      <a href="/survey_page/<%=survey.id%>"><%= survey.title %></a>
       <p>by <%= survey.creator.name %></p>
     </div>
   <% end %>  
@@ -15,7 +15,7 @@
      <h3><%= survey_of_day.title %> </h3>
      <p><%= survey_of_day.description %></p>
      <p class = "small-text">by <%= survey_of_day.creator.name %></p>
-     <form action="/survey/<%= survey_of_day.id %>">
+     <form action="/survey_page/<%= survey_of_day.id %>">
        <input type="submit" class="btn big" value="Take this survey">
      </form>
   </div>

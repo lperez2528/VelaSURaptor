@@ -1,0 +1,19 @@
+<div>
+  <h1>Results: <%= @survey.title%></h1>
+  <p>Total of survey takers:<%=@total_takers%></p>
+
+  <%@survey.questions.each do |question|%>
+
+  <ul>
+    <li>
+      <h3><%=question.description%><h3>
+        <li><u>Choice, Number Responders, Percentage</u></li>
+          <%question.choices.each do |choice|%>
+        <ul>
+          <li><%= choice.text %>,  <%= choice.responses.count%>,  <%=choice.percentage.to_i%>%</li>
+        </ul>
+          <%end%>
+      </li>
+    </ul>
+      <%end%>
+  </div>
