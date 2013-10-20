@@ -1,9 +1,11 @@
 <div class="container">
-	<h1>Welcome <%=@user.first_name%> <%=@user.last_name%></h1>
-	<a href="/edit_profile">Edit User Profile</a>
-	<br>
-	<h3>My Surveys</h3>
-	<% @user.created_surveys.each do |survey| %>
-	<a href="/results/survey/<%= survey.id %>"><%= survey.description %></a><br><br>
-	<%end%>
+  <h1>Welcome <%=@user.first_name%> <%=@user.last_name%></h1>
+  <a href="/edit_profile">Edit User Profile</a>
+  <br>
+  <h3>My Surveys</h3>
+  <% @user.created_surveys.each do |survey| %>
+  <a href="/results/survey/<%= survey.id %>"><%= survey.description %></a><br><br>
+  <%end%>
 </div>
+
+<!-- #######What does this page do? #########-->

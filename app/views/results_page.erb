@@ -1,12 +1,15 @@
-<div>
-  <h1>Results: <%= @survey.title%></h1>
-  <p>Total of survey takers:<%=@total_takers%></p>
 
+<div class="results">
+  <h1>Results: <%= @survey.title%></h1>
+
+  <p>Total of survey takers:<%=(@total_takers)%></p>
+    <%if @total_takers > 1 %> 
   <%@survey.questions.each do |question|%>
+
 
   <ul>
     <li>
-      <h3><%=question.description%><h3>
+      <h3><%=question.description%></h3>
         <li><u>Choice, Number Responders, Percentage</u></li>
           <%question.choices.each do |choice|%>
         <ul>
@@ -16,4 +19,44 @@
       </li>
     </ul>
       <%end%>
-  </div>
+
+    <% else %>
+      <%@survey.questions.each do |question|%>
+        <h3><%=question.description%></h3>
+          <%question.choices.each do |choice|%>
+          <ul>
+            <li><p><%= choice.text %></p></li>
+          </ul>
+          <% end %> 
+      <% end %>   
+
+    <% end %>
+
+<div id="survey_result_table">
+  <h2>Or you can view it by table:</h2>
+
+    <%@survey.questions.each do |question|%>
+<table border= "1"> 
+<thead>
+      <h4><%=question.description%></h4>
+  <tr>
+    <th>Choice </th>
+    <th># of Responses</th>
+    <th>Percentage</th>
+  <tr>
+</thead> 
+<tbody> 
+    <%question.choices.each do |choice|%>
+  <tr align="center"> 
+    <td> <%= choice.text %> </td>
+    <td> <%= choice.responses.count%> </td>
+    <td> <%=choice.percentage.to_i%> % </td>
+  </tr>
+    <%end%>
+</tbody> 
+      <%end%>
+
+</table>
+
+</div>
+</div>

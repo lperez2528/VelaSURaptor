@@ -299,3 +299,6 @@ label{
   color:red;
 }
 
+.results {
+  float: left;
+}

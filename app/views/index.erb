@@ -4,7 +4,7 @@
   <h1>My Surveys</h1>
     <% current_user.created_surveys.each do |survey| %>
       <div class="well small">
-        <a href="/survey/<%=survey.id%>"><%= survey.title %></a><br><br>
+        <a href="/results/survey_page/<%=survey.id%>"><%= survey.title %></a><br><br>
       </div>
     <%end%>
 </div>
