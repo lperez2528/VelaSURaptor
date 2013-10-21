@@ -15,10 +15,10 @@ end
 end
 
 200.times do 
-  question = Question.create(description: Faker::Company.bs)
+  question = Question.create(description: "How to #{Faker::Company.bs}")
   Survey.all.sample.questions << question
   rand(2..4).times do 
-    question.choices << Choice.create(text: Faker::Company.bs)
+    question.choices << Choice.create(text: "We should #{Faker::Company.bs}")
   end
 end
 

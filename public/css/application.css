@@ -73,6 +73,20 @@ body {
   text-shadow: 0px 0px 5px rgba(150, 150, 150, 1);
 }
 
+.take-survey {
+  width:50%;
+  margin:20px auto;
+  text-align: left;
+}
+
+/*.take-survey span{
+  float:left;
+}*/
+
+.take-survey input{
+  margin:20px;
+}
+
 .well.fixed{
   /*position:fixed;*/
 }

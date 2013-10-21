@@ -1,26 +1,23 @@
-<h1>Survey: <%= @survey.title %></h1>
-
-<form action="/survey_page/<%= @survey.id %>" method="POST">
-
-  <table>
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td><%= question.description %></td>
-        </tr>
-          <% question.choices.each do |choice| %>
-            <tr> 
-              <td><input type="radio" id="choice" name="current_choices[<%=question.id %>]" value="<%=choice.id%>" </td>
-              <td><%= choice.text%> </td>
-            </tr>
-          <% end %>
-      <% end %>
-    </tbody>
-  </table>
+<div class="take-survey">
+<div class="well">
+  <h1><%= @survey.title %></h1>
+</div>
+  <form action="/survey_page/<%= @survey.id %>" method="POST">
+    <% @questions.each do |question| %>
+    <div class="well">
+      <h2><%= question.description %></h2>
+    <% question.choices.each do |choice| %>
+      <input type="radio" id="choice" name="current_choices[<%=question.id %>]" value="<%=choice.id%>"> 
+      <span><%= choice.text%></span>
+      <br>
+    <% end %> 
+    </div>
+    <% end %>
 
 
 
-  <input type="submit" value="Submit Survey">
-</form>
+    <input type="submit" value="Submit Survey">
+  </form>
 
 
+</div>
