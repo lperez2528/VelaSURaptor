@@ -6,6 +6,10 @@ end
 get '/create_survey' do 
   erb :create_survey
 end
+
+get '/congrats' do
+  erb :congrats
+end
  
  
 post '/create_survey' do

@@ -18,5 +18,5 @@ post '/survey_page/:survey_id' do
   end
 
   @current_user.taken_surveys << @survey
-  redirect "/"
+  redirect "/congrats"
 end
