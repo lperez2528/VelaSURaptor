@@ -22,27 +22,21 @@ $(document).ready(function(){
 
 google.load("visualization", "1", {packages:["corechart"]});
 
-function drawChart(question) {
+function drawChart(questions) {
 
-  console.log("I WAS CALLED")
-
-  var choicesDataArray = [["Choice", "Responses"]]
-  for(i=0; i < question.choices.length; i++){
-    var choice = question.choices[i]
-    choicesDataArray.push([choice.text, choice.takers])
-  }
-
-  var data = google.visualization.arrayToDataTable(choicesDataArray);
-
-  var options = {
+   var options = {
     gridlines: {count: -1},
-    title: question.text,
     backgroundColor: '#DBE2DB',
     colors:["#115229"],
     hAxis: {title: 'Choice', titleTextStyle: {color: '#115229'}},
     vAxis: {format: "#"}
   };
 
-  var chart = new google.visualization.ColumnChart(document.getElementById(question.id.toString()));
-  chart.draw(data, options);
+  for(i=0; i<questions.length;i++){
+    var question = questions[i]
+    options.title = question.text
+    var data = google.visualization.arrayToDataTable(question.choices);
+    var chart = new google.visualization.ColumnChart(document.getElementById(question.id.toString()));
+    chart.draw(data, options);
+  }
 }

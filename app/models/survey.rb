@@ -7,24 +7,21 @@ class Survey < ActiveRecord::Base
   has_many :takers, through: :submissions
 
   def stats
-    stats = []
+    questions_ary = []
     
     questions.each do |question|
-      question_hash = {}
-      question_hash[:text] = question.description
-      question_hash[:id] = question.id.to_s
-      question_hash[:choices] = []
+      question_data = {}
+      question_data[:text] = question.description
+      question_data[:id] = question.id.to_s
+      question_data[:choices] = [["Choice", "Percentage"]]        
 
       question.choices.each do |choice|
-        choice_hash = {}
-        choice_hash[:text] = choice.text
-        choice_hash[:takers] = choice.responses.count
-        choice_hash[:percentage] = choice.percentage
-        question_hash[:choices] << choice_hash
+        choice_ary = [choice.text, choice.responses.count]
+        question_data[:choices] << choice_ary
       end
-      stats << question_hash
+      questions_ary << question_data
     end
 
-  stats
+  questions_ary
   end
 end

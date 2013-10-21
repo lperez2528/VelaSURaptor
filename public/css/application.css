@@ -7,7 +7,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 1080px;
+  width: 1280px;
   background-color:#F0F6F0;
 }
 
@@ -209,19 +209,23 @@ label{
   color:#192B19;
 }
 
-.user-info{
+.user-info, .survey-info{
   padding:0px;
   text-align: left;
 }
 
-.user-info ul{
+.user-info ul, .survey-info ul{
   padding-left: 0; 
   list-style-type: none;
   float:left;
 }
 
-.user-info li {
+.user-info li , .survey-info li{
   margin: 5px auto;
+}
+
+.survey-info {
+  text-align: center;
 }
 
 .gravatar{
