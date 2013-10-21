@@ -2,15 +2,15 @@ $(document).ready(function(){
 
       $(".survey-list").slideDown(1000); 
       $('.question_button').on('click', function(){
-      var input = $("<li class='ui-state-default'><div class='question_and_choices well'><p><label for 'create_question'>Question:</label></p><p><input type= 'text' name='question[]' id='question'></p><p><label for 'create_choice'>Choice:</label></p> <p><input type= 'text' name='question[]choice[]' class='choice'></p></div></li>")
+      var input = $("<li class='ui-state-default'><div class='question_and_choices well'><p><label for 'create_question'>Question:</label></p><p><input type= 'text' name='question[]' id='question'></p><p><label for 'create_choice'>Choice:</label></p> <p><input type= 'text' name='question[]choice[]' class='choice'></p><button class='choice_button btn big'>Add Another Choice</button></div></li>")
  
       $('#sortable').append(input)
     });
 
-    $('.choice_button').on('click', function(){
+    $(document).on('click','.choice_button', function(e){
+      e.preventDefault();
       var input = $('<p><label for "create_choice" id="create_choice">Choice:</label></p><p><input type= "text" name="question[]choice[]" class="choice"></p>')
- 
-      $('.choice').last().after(input) 
+      $(this).before(input) 
     });
 
     $("#sortable").sortable()
