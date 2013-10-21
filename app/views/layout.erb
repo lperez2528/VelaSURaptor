@@ -14,16 +14,17 @@
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="/js/survey.js"></script>
-    <script src="/js/sessions.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="/js/survey.js"></script>
+  <script src="/js/sessions.js"></script>
 
   <title></title>
 </head>
 <body>
   <div class="container">
     <div class="top-nav">
-      <span class="logo"><img src="velociraptor.png"></span>
+      <span class="logo"><img src="http://localhost:9393/velociraptor.png"></span>
       <div class="login">
         <% if authenticated? %>
           <span class="name"><%= current_user.name %></span>
